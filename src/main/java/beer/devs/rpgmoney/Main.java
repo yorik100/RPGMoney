@@ -172,6 +172,11 @@ public final class Main extends JavaPlugin implements Listener
         entitiesLootsRegistry = new EntitiesLootsRegistry(this);
         blocksLootsRegistry = new BlocksLootsRegistry(this);
         fishesLootsRegistry = new FishesLootsRegistry(this);
+		
+		onDisable();
+		permissions.clear();
+		multipliersDrops.clear();
+		multipliersPickup.clear();
 
         ConfigurationSection sec = config.getConfig().getConfigurationSection("multipliers_groups.drop");
         if (sec != null)
